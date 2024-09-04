@@ -15,8 +15,8 @@ public class HelloWorldController {
 
     @GetMapping
     public String getResponse() {
-        String msg_1 = restTemplate.getForObject("http://hello-service:8080/hello", String.class);
-        String msg_2 = restTemplate.getForObject("http://localhost:8082/world", String.class);
+        String msg_1 = restTemplate.getForObject("http://hello-service:8081/hello", String.class);
+        String msg_2 = restTemplate.getForObject("http://world-service:8082/world", String.class);
 
         return msg_1 + " " + msg_2;
     }

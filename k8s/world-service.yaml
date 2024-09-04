@@ -3,9 +3,10 @@ kind: Service
 metadata:
   name: world-service
 spec:
-  type: ClusterIP
+  type: NodePort
   ports:
-    - port: 8082
+    - port: 8080
       targetPort: 8082
+      nodePort: 30002
   selector:
     app: world
