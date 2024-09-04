@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: world-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: world
+  template:
+    metadata:
+      labels:
+        app: world
+    spec:
+      containers:
+        - name: world
+          image: srishti4299/world:latest
+          ports:
+            - containerPort: 8082
